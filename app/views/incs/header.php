@@ -1,12 +1,13 @@
-<?php defined("MYAPP") or die('Forbidden'); ?>
 <!DOCTYPE html>
 <html lang="ru">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title><?=$title ?></title>
+        <base href="<?= PATH ?>/">
         <link href="assets/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="assets/css/main.css">
+        <link rel="icon" href="img/favicon.ico">
     </head>
     <body>
     <div class="wrapper">
@@ -24,7 +25,7 @@
                                 <a class="nav-link active" aria-current="page" href="/">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="about.php">About</a>
+                                <a class="nav-link" href="about">About</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Contact</a>

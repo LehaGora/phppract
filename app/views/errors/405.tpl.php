@@ -1,16 +1,14 @@
 <?php require VIEWS . '/incs/header.php'; ?>
 
-<main class="main py-3">
+<main class="d-flex flex-column justify-content-center main py-3">
 
     <div class="container">
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-12 d-flex justify-content-center">
 
-                <?=$post ?>
+                <h2 class="">405 - Page not found</h2>
 
             </div>
-
-            <?php require VIEWS . '/incs/sidebar.php'; ?>
         </div>
     </div>
 
