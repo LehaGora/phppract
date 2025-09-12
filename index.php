@@ -9,7 +9,7 @@
     </head>
     <body>
         
-    <div class="wrapper1">
+    <div class="wrapper">
         <header class="header">
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div class="container-fluid">
