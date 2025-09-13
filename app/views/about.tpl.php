@@ -5,9 +5,8 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8">
-
+                <p><?=$title ?></p>
                 <?=$post ?>
-
             </div>
 
             <?php require VIEWS . '/incs/sidebar.php'; ?>

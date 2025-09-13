@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-md-12 d-flex justify-content-center">
 
-                <h2 class="">405 - Page not found</h2>
+                <h2 class="">500 - Server error</h2>
 
             </div>
         </div>
