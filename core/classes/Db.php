@@ -26,5 +26,11 @@ class Db
         $stmt->execute();
         return $stmt;
     }
+
+    public function query_noexecute($query)
+    {
+        $stmt = $this->conn->prepare($query);
+        return $stmt;
+    }
     
 }
