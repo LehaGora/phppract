@@ -27,7 +27,7 @@ class Db
         return $stmt;
     }
 
-    public function query_noexecute($query)
+    public function query__noexecute($query)
     {
         $stmt = $this->conn->prepare($query);
         return $stmt;
