@@ -7,6 +7,6 @@ $post = '
     <p>Non a laudantium nesciunt laboriosam, aliquam eos unde vel. Voluptate beatae culpa cupiditate provident itaque nulla! At, ut, sapiente atque excepturi voluptatibus recusandae quae tempore, sunt ratione aperiam voluptas dolor.</p>
 ';
 
-$recent_posts = $db->query('SELECT * FROM posts ORDER BY id DESC LIMIT 3')->fetchAll();
+$recent_posts = $db->query('SELECT * FROM posts ORDER BY id DESC LIMIT 3')->findAll();
 
 require_once VIEWS . '/about.tpl.php';
