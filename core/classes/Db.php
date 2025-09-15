@@ -5,8 +5,21 @@ class Db
 
     private $connection;
     private PDOStatement $stmt;
+    private static $instance;
 
-    public function __construct(array $db_config)
+    private function __construct()
+    {
+    }
+
+    public static function getInstance()
+    {
+        if ( self::$instance === null ) {
+            self::$instance = new self();
+        }
+        return self::$instance;
+    }
+
+    public function getConnection(array $db_config)
     {
         try {
             $this->connection = new PDO(
@@ -15,6 +28,7 @@ class Db
                 $db_config['password'], 
                 $db_config['options']
             );
+            return $this;
         } catch (PDOException $e) {
             //echo "DB Error: {$e->getMessage()}";
             abort(500);
