@@ -6,4 +6,5 @@ $routes = [
     'contact' => 'contact.php',
     'info' => 'info.php',
     'post' => 'post.php',
+    'post/create' => 'post-create.php',
 ];

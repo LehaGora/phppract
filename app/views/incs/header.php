@@ -33,6 +33,9 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="info">Info</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="post/create">New Post</a>
+                            </li>
                         </ul>
                     </div>
                 </div>

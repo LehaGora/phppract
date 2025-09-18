@@ -20,3 +20,24 @@ function abort($code = 404)
     require VIEWS . "/errors/{$code}.tpl.php";
     die;
 }
+
+function load($fillable = [])
+{
+    $data = [];
+    foreach ( $_POST as $key => $value ) {
+        if ( in_array($key, $fillable) ) {
+            $data[$key] = trim($value);
+        }
+    }
+    return $data;
+}
+
+function old($fieldname)
+{
+    return isset($_POST[$fieldname]) ? h($_POST[$fieldname]) : '';
+}
+
+function h($str)
+{
+    return htmlspecialchars($str, ENT_QUOTES);
+}
