@@ -13,38 +13,36 @@
                     <div class="mb-3">
                         <label for="title" class="form-label">Post title</label>
                         <input name="title" type="text" class="form-control" id="title" placeholder="Post title" value="<?= old('title') ?>">
-                        <?php if (isset($errors['title'])) : ?>
+                        <?php if (isset($errors['title'])) : 
+                            foreach ( $errors['title'] as $value ) : ?>
                             <div class="invalid-feedback d-block">
-                                <?= $errors['title'] ?>
+                                <?= $value ?>
                             </div>
-                        <?php endif; ?>
+                        <?php endforeach; endif; ?>
                     </div>
 
                     <div class="mb-3">
                         <label for="Excerpt" class="form-label">Excerpt</label>
                         <textarea name="excerpt" class="form-control" id="Excerpt" rows="2" placeholder="Post excerpt"><?= old('excerpt') ?></textarea>
-                        <?php if (isset($errors['excerpt'])) : ?>
+                        <?php if (isset($errors['excerpt'])) : 
+                            foreach ( $errors['excerpt'] as $value ) : ?>
                             <div class="invalid-feedback d-block">
-                                <?= $errors['excerpt'] ?>
+                                <?= $value ?>
                             </div>
-                        <?php endif; ?>
+                        <?php endforeach; endif; ?>
                     </div>
 
                     <div class="mb-3">
                         <label for="Content" class="form-label">Content</label>
                         <textarea name="content" class="form-control" id="Content" rows="3" placeholder="Post content"><?= old('content') ?></textarea>
-                        <?php if (isset($errors['content'])) : ?>
+                        <?php if (isset($errors['content'])) : 
+                            foreach ( $errors['content'] as $value ) : ?>
                             <div class="invalid-feedback d-block">
-                                <?= $errors['content'] ?>
+                                <?= $value ?>
                             </div>
-                        <?php endif; ?>
+                        <?php endforeach; endif; ?>
                     </div>
 
-
-                    <!-- <div class="mb-3 form-check">
-                        <input name="checkbox" type="checkbox" class="form-check-input" id="exampleCheck1">
-                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                    </div> -->
                     <button type="submit" class="btn btn-success">Create</button>
                 </form>
             </div>

@@ -13,6 +13,13 @@ function dd($data)
     die;
 }
 
+function print_arr($data)
+{
+    echo "<pre>";
+    print_r($data);
+    echo "</pre>";
+}
+
 function abort($code = 404)
 {
     $title = $code;
@@ -40,4 +47,16 @@ function old($fieldname)
 function h($str)
 {
     return htmlspecialchars($str, ENT_QUOTES);
+}
+
+function redirect($url = '')
+{
+    if ($url) {
+        $redirect = $url;
+    } else {
+        $redirect = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : PATH;
+    }
+    
+    header("Location: {$redirect}");
+    die;
 }
