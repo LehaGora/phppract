@@ -1,10 +1,11 @@
 <?php
 
-require_once CORE . '/classes/validator.php';
+// require_once CORE . '/classes/validator.php';
+use myfrm\Validator;
 
 /**
- * @var Db $db
- * @var Validator $validator
+ * @var \myfrm\Db $db
+ * @var \myfrm\Validator $validator
  */
 
 if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
@@ -36,14 +37,16 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
         ]
     );
 
-    if ( $validation->hasErrors() ) {
-        $errors = $validation->getErrors();
-    }
-    
-    if (empty($errors)) {
+    if ( !$validation->hasErrors() ) {
         if ( $db->query('INSERT INTO posts (title, excerpt, content) VALUE (:title, :excerpt, :content)', $data) ) {
+            $_SESSION['success'] = 'OK. Запись успешно добавлена в БД.';
+        } else {
+            $_SESSION['error'] = 'DB Error';
         }
-        redirect('/post/create');
+        // redirect('/post/create');
+        redirect();
+    } else {
+        $errors = $validation->getErrors();
     }
 }
 

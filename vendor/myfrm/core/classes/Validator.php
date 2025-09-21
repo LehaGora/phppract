@@ -1,5 +1,7 @@
 <?php
 
+namespace myfrm;
+
 class Validator
 {
 
@@ -15,7 +17,7 @@ class Validator
     public function validate($data = [], $rules = [])
     {
         foreach ($data as $fieldname => $value) {
-            if ( in_array($fieldname, array_keys($rules)) ) {
+            if ( isset($rules[$fieldname]) ) {
                 $this->check(
                     [
                         'fieldname' => $fieldname,
