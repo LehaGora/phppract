@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-md-12 d-flex justify-content-center">
 
-                <h2 class="">404 - Page not found</h2>
+                <h2 class=""><?= $code ?> - <?= $text ?></h2>
 
             </div>
         </div>

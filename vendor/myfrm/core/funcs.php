@@ -20,7 +20,7 @@ function print_arr($data)
     echo "</pre>";
 }
 
-function abort($code = 404)
+function abort($code = 404, $text = 'Page not found')
 {
     $title = $code;
     http_response_code($code);

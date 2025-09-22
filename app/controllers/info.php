@@ -1,5 +1,7 @@
 <?php
 
+global $db;
+
 $title = 'My Blog :: Info';
 
 $post = '

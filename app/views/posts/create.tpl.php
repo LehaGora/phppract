@@ -4,16 +4,11 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-md-8">
-                <?= get_alerts(); ?>
-            </div>
-        </div>
-        <div class="row">
             <div class="col-md-12">
                 <h1 class="mb-5">
                     <?= $title ?>
                 </h1>
-                <form action="" method="POST">
+                <form action="/posts" method="POST">
 
                     <div class="mb-3">
                         <label for="title" class="form-label">Post title</label>

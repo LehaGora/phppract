@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title><?=$title ?></title>
+        <title><?= $title ?>-<?= $text ?? '' ?></title>
         <base href="<?= PATH ?>/">
         <link href="assets/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="assets/css/main.css">
@@ -34,10 +34,18 @@
                                 <a class="nav-link" href="info">Info</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="post/create">New Post</a>
+                                <a class="nav-link" href="posts/create">New Post</a>
                             </li>
                         </ul>
                     </div>
                 </div>
             </nav>
         </header>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <?= get_alerts(); ?>
+                </div>
+            </div>
+        </div>

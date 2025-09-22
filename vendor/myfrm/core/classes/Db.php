@@ -37,7 +37,7 @@ class Db
             return $this;
         } catch (PDOException $e) {
             //echo "DB Error: {$e->getMessage()}";
-            abort(500);
+            abort(500, __METHOD__);
         }
     }
 
@@ -67,7 +67,7 @@ class Db
     {
         $res = $this->find();
         if ( !$res ) {
-            abort();
+            abort(text: __METHOD__);
         }
         return $res;
     }
