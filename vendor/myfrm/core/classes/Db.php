@@ -27,6 +27,9 @@ class Db
 
     public function getConnection(array $db_config)
     {
+        if ( $this->connection instanceof PDO ) {
+            return $this;
+        }
         try {
             $this->connection = new PDO(
                 "mysql:host={$db_config['host']};dbname={$db_config['dbname']};charset={$db_config['charset']}", 

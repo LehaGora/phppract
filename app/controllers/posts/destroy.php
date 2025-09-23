@@ -1,6 +1,6 @@
 <?php
 
-global $db;
+$db = db();
 
 $api_data = json_decode(file_get_contents('php://input'), 1);
 

@@ -1,6 +1,6 @@
 <?php
 
-global $db;
+$db = db();
 
 // require_once CORE . '/classes/validator.php';
 use myfrm\Validator;

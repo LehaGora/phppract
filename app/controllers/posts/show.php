@@ -1,6 +1,6 @@
 <?php
 
-global $db;
+$db = db();
 
 $id = (int)$_GET['id'] ?? 0;
 

@@ -1,6 +1,9 @@
 <?php
 
-global $db;
+use myfrm\App;
+use myfrm\Db;
+
+$db = App::get(Db::class);
 
 $title = 'My Blog :: Home';
 
