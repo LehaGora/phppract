@@ -81,3 +81,8 @@ function db(): Db
 {
     return App::get(Db::class);
 }
+
+function check_auth()
+{
+    return isset($_SESSION['user']);
+}
