@@ -44,7 +44,7 @@ if ( !$validation->hasErrors() ) {
         $_SESSION['error'] = 'DB Error';
     }
     // redirect('/post/create');
-    redirect('/');
+    redirect('/posts/create');
 } else {
     $errors = $validation->getErrors();
     $title = 'New Post';

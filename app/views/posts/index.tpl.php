@@ -23,6 +23,16 @@
                     </div>
                 <?php endforeach; ?>
 
+                <nav>
+                    <ul class="pagination">
+                        <?php for ($i = 1; $i <= $pages_cnt; $i++) : ?>
+                            <li class="page-item">
+                                <a class="page-link <?= $i == $page ? 'active' : '' ?>" href='?page=<?= $i ?>'><?= $i ?></a>
+                            </li>
+                        <?php endfor; ?>
+                    </ul>
+                </nav>
+
             </div>
 
             <?php require VIEWS . '/incs/sidebar.php'; ?>
