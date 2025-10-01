@@ -8,6 +8,18 @@ $db = App::get(Db::class);
 $title = 'My Blog :: Home';
 
 
+$page = $_GET['page'] ?? 1;
+$per_page = 2;
+$total = $db->query('SELECT * FROM posts')->rowCount();
+$pagination = new \myfrm\Pagination((int)$page, $per_page, $total);
+print_arr($pagination);
+
+$start = $pagination->getStart();
+var_dump($start);
+
+
+die;
+
 $per_page = 3;
 
 $total = $db->query('SELECT * FROM posts')->rowCount();
