@@ -6,6 +6,8 @@
         <div class="row">
             <div class="col-md-8">
 
+                <?= $pagination ?>
+
                 <?php foreach ($posts as $post) : ?>
                     <div class="card mb-3">
                         <div class="card-body">
@@ -23,15 +25,7 @@
                     </div>
                 <?php endforeach; ?>
 
-                <nav>
-                    <ul class="pagination">
-                        <?php for ($i = 1; $i <= $pages_cnt; $i++) : ?>
-                            <li class="page-item">
-                                <a class="page-link <?= $i == $page ? 'active' : '' ?>" href='?page=<?= $i ?>'><?= $i ?></a>
-                            </li>
-                        <?php endfor; ?>
-                    </ul>
-                </nav>
+                <?= $pagination ?>
 
             </div>
 
