@@ -6,12 +6,13 @@ class Validator
 {
 
     protected $errors = [];
-    protected $rules_list = ['required', 'min', 'max', 'email'];
+    protected $rules_list = ['required', 'min', 'max', 'email', 'unique'];
     protected $messages = [
         'required' => 'The :fieldname: поле обязательно для заполнения',
         'min' => 'The :fieldname: поле должно быть минимум :rulevalue: символов',
         'max' => 'The :fieldname: поле должно быть максимум :rulevalue: символов',
         'email' => 'Неверный email',
+        'unique' => 'The :fieldname: уже используется',
     ];
 
     public function validate($data = [], $rules = [])
@@ -83,5 +84,11 @@ class Validator
     protected function email($value, $rule_value)
     {
         return filter_var($value, FILTER_VALIDATE_EMAIL);
+    }
+
+    protected function unique($value, $rule_value)
+    {
+        $data = explode(':', $rule_value);
+        return (!db()->query("SELECT {$data[1]} FROM {$data[0]} WHERE {$data[1]} = ? LIMIT 1", [$value])->rowCount());
     }
 }

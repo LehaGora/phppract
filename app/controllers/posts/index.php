@@ -9,7 +9,7 @@ $title = 'My Blog :: Home';
 
 
 $page = $_GET['page'] ?? 1;
-$per_page = 2;
+$per_page = 1;
 $total = $db->query('SELECT * FROM posts')->rowCount();
 $pagination = new \myfrm\Pagination((int)$page, $per_page, $total);
 $start = $pagination->getStart();

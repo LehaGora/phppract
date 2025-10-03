@@ -8,7 +8,7 @@ class Pagination
     public int $count_pages = 1;
     public int $current_page = 1;
     public string $uri = '';
-    public int $mid_size = 2;
+    public int $mid_size = 3;
     public int $all_pages = 7;
 
     public function __construct(
