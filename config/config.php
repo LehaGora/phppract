@@ -11,3 +11,4 @@ define("CONTROLLERS", APP . '/controllers');
 define("VIEWS", APP . '/views');
 
 define("PATH", 'https://phppract.local');
+define("LOGIN_PAGE", PATH . '/login');
