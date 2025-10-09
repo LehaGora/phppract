@@ -31,14 +31,23 @@ function abort($code = 404, $text = 'Page not found')
     die;
 }
 
-function load($fillable = [])
+function load($fillable = [], $post = true)
 {
+    $load_data = $post ? $_POST : $_GET;
     $data = [];
-    foreach ( $_POST as $key => $value ) {
-        if ( in_array($key, $fillable) ) {
-            $data[$key] = trim($value);
+
+    foreach ( $fillable as $name ) {
+        if ( isset($load_data[$name]) ) {
+            if ( !is_array($load_data[$name]) ) {
+                $data[$name] = trim($load_data[$name]);
+            } else {
+                $data[$name] = $load_data[$name];
+            }
+        } else {
+            $data[$name] = '';
         }
     }
+
     return $data;
 }
 
@@ -85,4 +94,10 @@ function db(): Db
 function check_auth()
 {
     return isset($_SESSION['user']);
+}
+
+function get_file_ext($file_name)
+{
+    $file_ext = explode('.', $file_name);
+    return end($file_ext);
 }

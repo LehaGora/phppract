@@ -4,8 +4,14 @@ $db = db();
 
 use myfrm\Validator;
 
-$fillable = ['name', 'email', 'password'];
+$fillable = ['name', 'email', 'password', 'avatar'];
 $data = load($fillable);
+
+if ( isset($_FILES['avatar']) && $_FILES['avatar']['error'] === 0 ) {
+    $data['avatar'] = $_FILES['avatar'];
+} else {
+    $data['avatar'] = [];
+}
 
 //validation
 $validator = new Validator();
@@ -24,6 +30,12 @@ $validation = $validator->validate($data,
         'password' => [
             'required' => true,
             'min' => 6,
+        ],
+        'avatar' => [
+            'required' => true,
+            'ext' => 'jpg|gif',
+            
+            'size' => 1_048_576,
         ],
     ]
 );

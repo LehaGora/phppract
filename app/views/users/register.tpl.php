@@ -7,7 +7,7 @@
             <div class="col-md-6 offset-md-3">
                 <p><?=$title ?></p>
 
-                <form action="/register" method="POST">
+                <form action="/register" method="POST" enctype="multipart/form-data">
 
                     <div class="mb-3">
                         <label for="name" class="form-label">Name</label>
@@ -36,6 +36,17 @@
                         <input name="password" type="password" class="form-control" id="password" placeholder="Password" value="<?= old('password') ?>">
                         <?php if (isset($errors['password'])) : 
                             foreach ( $errors['password'] as $value ) : ?>
+                            <div class="invalid-feedback d-block">
+                                <?= $value ?>
+                            </div>
+                        <?php endforeach; endif; ?>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="avatar" class="form-label">Загрузите файл аватара</label>
+                        <input name="avatar" class="form-control" type="file" id="avatar">
+                        <?php if (isset($errors['avatar'])) : 
+                            foreach ( $errors['avatar'] as $value ) : ?>
                             <div class="invalid-feedback d-block">
                                 <?= $value ?>
                             </div>
