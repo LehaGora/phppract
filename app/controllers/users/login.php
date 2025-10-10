@@ -40,6 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             'id' => $user['id'],
             'name' => $user['name'],
             'email' => $user['email'],
+            'avatar' => $user['avatar'],
         ];
         $_SESSION['success'] = 'OK. Вы вошли в систему';
         redirect(PATH);

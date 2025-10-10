@@ -40,16 +40,26 @@
 
                         <ul class="navbar-nav mb-2 mb-lg-0">
                             <?php if ( check_auth() ) : ?>
+
+                                <li class="nav-item d-flex flex-column justify-content-center">
+                                    <div class="avatar avatar-sm">
+                                        <img src="<?= $_SESSION['user']['avatar'] ?>" alt="Средний аватар">
+                                    </div>
+                                </li>
+
                                 <li class="nav-item">
                                     <a class="nav-link" href="register"><?= $_SESSION['user']['name']; ?></a>
                                 </li>
+
                                 <li class="nav-item">
                                     <a class="nav-link" href="logout">Logout</a>
                                 </li>
+
                             <?php else : ?>
                                 <li class="nav-item">
                                     <a class="nav-link" href="register">Register</a>
                                 </li>
+
                                 <li class="nav-item">
                                     <a class="nav-link" href="login">Login</a>
                                 </li>
